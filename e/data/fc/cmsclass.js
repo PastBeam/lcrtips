@@ -1,0 +1,1 @@
+document.write("<option value=\'1\' style=\'background:#99C4E3\'>|-苹果</option><option value=\'2\' style=\'background:#99C4E3\'>|-安卓</option><option value=\'3\' style=\'background:#99C4E3\'>|-阅读赚钱</option><option value=\'4\' style=\'background:#99C4E3\'>|-试玩攻略</option><option value=\'5\' style=\'background:#99C4E3\'>|-首页滚动图片</option>");

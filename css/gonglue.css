@@ -1,0 +1,353 @@
+body,
+html {
+	background-color: #d9e4fe;
+
+	overflow: auto;
+}
+
+.header {
+	z-index: 5;
+}
+
+.gl-top {
+	position: relative;
+	top: -1.49333rem;
+	margin-bottom: -1.49333rem;
+	width: 100%;
+	height: 4.66667rem;
+	background-image: url("/images/gl-top.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.kf-img {
+	position: absolute;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 0.18667rem;
+	top: 2.4rem;
+	left: 1.54667rem;
+	overflow: hidden;
+}
+
+.kf-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.kf-name {
+	position: absolute;
+	line-height: 0.42667rem;
+	top: 2.48rem;
+	left: 3.14667rem;
+	color: #333333;
+}
+
+.kf-wx {
+	position: absolute;
+	line-height: 0.37333rem;
+	top: 3.14667rem;
+	left: 3.14667rem;
+	color: #333333;
+}
+
+.kf-code-img {
+	position: relative;
+	top: 2.77333rem;
+	left: 8rem;
+	width: 0.4rem;
+	height: 0.4rem;
+	background-image: url("/images/kf-code-img.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.gl-top2 {
+	height: 6.93333rem;
+	margin: 0.4rem 0.4rem 0;
+	border-radius: 0.26667rem;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.gl-top2-title {
+	height: 1.2rem;
+	position: relative;
+}
+
+.gl-top2-title-img {
+	position: absolute;
+	width: 0.66667rem;
+	height: 0.66667rem;
+	top: 0.26667rem;
+	left: 0.34667rem;
+	background-image: url("/images/gl-top2-title-img.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.gl-top2-title-text {
+	position: absolute;
+	line-height: 0.42667rem;
+	font-weight: bold;
+	top: 0.4rem;
+	left: 1.14667rem;
+}
+
+.gl-top2 .gl-fist {
+	position: relative;
+	background-color: #f2f7ff;
+	border-radius: 0.08rem;
+	margin: 0 0.24rem;
+	height: 2.26667rem;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.gl-fist-img {
+	position: absolute;
+	width: 1.46667rem;
+	height: 1.46667rem;
+	top: 0.4rem;
+	left: 0.16rem;
+	background-image: url("/images/gl-fist-img.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.gl-fist-text {
+	position: absolute;
+	top: 0px;
+	left: 2.02667rem;
+	padding-right: 0.21333rem;
+}
+
+.gl-fist-title {
+	position: absolute;
+	top: 0.34667rem;
+	line-height: 0.4rem;
+	font-weight: bold;
+}
+
+.gl-fist-intro {
+	position: relative;
+	top: 0.98667rem;
+	line-height: 0.53333rem;
+	color: #555;
+}
+
+.gl-top2 .gl-second {
+	position: relative;
+	background-color: #f2f7ff;
+	border-radius: 0.08rem;
+	margin: 0.26667rem 0.24rem 0;
+	height: 2.8rem;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.gl-second-img {
+	position: absolute;
+	width: 1.46667rem;
+	height: 1.46667rem;
+	top: 0.61333rem;
+	left: 0.16rem;
+	background-image: url("/images/gl-second-img.png");
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.gl-second-text {
+	position: absolute;
+	top: 0px;
+	left: 2.02667rem;
+	padding-right: 0.21333rem;
+}
+
+.gl-second-title {
+	position: absolute;
+	top: 0.34667rem;
+	line-height: 0.4rem;
+	font-weight: bold;
+}
+
+.gl-second-intro {
+	position: relative;
+	top: 0.98667rem;
+	line-height: 0.53333rem;
+	color: #555;
+}
+
+.video-out {
+	/*width: 100%;*/
+	/*height: 6rem;*/
+	margin: 0.35135135135135137rem;
+	margin-top: 0.4rem;
+	/*background-color: #fff;*/
+	border-radius: 0.2702702702702703rem;
+}
+
+.video-out img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.2702702702702703rem;
+}
+
+.video-out video {
+	border-radius: 0.2702702702702703rem;
+}
+
+.middle-body {
+	padding: 0 0 1.7567567567567568rem;
+	margin-top: 0.4rem;
+	width: 100%;
+	background-color: #d9e4fe;
+}
+
+.gl-middle {
+	background-color: #fff;
+	border-radius: 0.2702702702702703rem;
+	margin: 0 0.35135135135135137rem;
+}
+
+.gl-more {
+	height: 1.2162162162162162rem;
+	position: relative;
+}
+
+.gl-more .gl-more-img {
+	position: absolute;
+	width: 0.6756756756756757rem;
+	height: 0.6756756756756757rem;
+	left: 0.35135135135135137rem;
+	top: 0.4594594594594595rem;
+	background-image: url(/images/gl-more.png);
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.gl-more .gl-more-text {
+	position: absolute;
+	height: 0.43243243243243246rem;
+	line-height: 0.43243243243243246rem;
+	left: 1.162162162162162rem;
+	top: 0.5945945945945946rem;
+	color: #333333;
+	font-weight: bold;
+}
+
+.gl-item {
+	height: 3.3513513513513513rem;
+	padding: 0.4594594594594595rem 0.40540540540540543rem;
+	display: flex;
+}
+
+.gl-item .gl-item-img {
+	width: 3.5135135135135136rem;
+	min-width: 3.5135135135135136rem;
+	height: 2.4324324324324325rem;
+}
+
+.gl-item .gl-item-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.2702702702702703rem;
+}
+
+.gl-item .gl-item-detail {
+	padding: 0.13513513513513514rem 0 0.13513513513513514rem 0.3783783783783784rem;
+}
+
+.gl-item-title {
+	font-size: 0.40540540540540543rem;
+	color: #333333;
+	line-height: 0.6756756756756757rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.gl-item-readnum {
+	margin-top: 0.2702702702702703rem;
+	font-size: 0.35135135135135137rem;
+	color: #999999;
+}
+
+.kf-code {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 23;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.kf-code-body {
+	position: absolute;
+	width: 7.33333rem;
+	height: 9.06667rem;
+	left: 50%;
+	top: 50%;
+	margin-left: -3.65333rem;
+	margin-top: -4.53333rem;
+	border-radius: 0.18667rem;
+	background-color: #fff;
+}
+
+.kf-code-close {
+	position: absolute;
+	width: 0.4rem;
+	height: 0.4rem;
+	top: 0.34667rem;
+	right: 0.34667rem;
+	background-image: url(/images/icon-close.png);
+	background-position: 100% 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.kf-erweima {
+	position: absolute;
+	top: 1.06667rem;
+	width: 4.66667rem;
+	height: 4.66667rem;
+	left: 1.33333rem;
+}
+
+.kf-erweima img {
+	width: 100%;
+	height: 100%;
+}
+
+.kf-code-text1 {
+	position: absolute;
+	top: 6.32rem;
+	text-align: center;
+	width: 100%;
+	color: #333;
+	line-height: 0.37333rem;
+}
+
+.kf-code-text2 {
+	position: absolute;
+	top: 6.98667rem;
+	text-align: center;
+	width: 100%;
+	color: #333;
+	line-height: 0.37333rem;
+}
+
+.kf-code-text3 {
+	position: absolute;
+	top: 7.65333rem;
+	text-align: center;
+	width: 100%;
+	color: #333;
+	line-height: 0.37333rem;
+}

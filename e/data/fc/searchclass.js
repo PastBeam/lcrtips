@@ -1,0 +1,1 @@
+document.write("<option value=\'1\'>|-苹果</option><option value=\'2\'>|-安卓</option><option value=\'3\'>|-阅读赚钱</option><option value=\'4\'>|-试玩攻略</option><option value=\'5\'>|-首页滚动图片</option>");
