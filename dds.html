@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打地鼠</title>
+</head>
+<body>
+    <p>分数：<span id="score">0</span></p>
+    <canvas id="myCanvas" width="600px" height="400px" style="border: 1px solid #ccc;"></canvas>
+    
+<script>
+
+    var myCanvas=document.getElementById("myCanvas");
+	var ctx=myCanvas.getContext("2d");	// 获得“绘图环境”
+    var score = 0, maxScore=0;
+    function addScore(){document.getElementById("score").innerText=(score++);}
+    var holeWidth=100,holeHeight=50;
+    var shuWidth=70, shuHeight=60;
+    var bgColor="white", lineColor="black", shuColor="gold", shuMove=60;
+    var mouseX=-999,mouseY=-999;
+    var fpsMs=1000/60,flushMs=1000/60, shuStep=shuMove*flushMs/500; // canvas重绘次/秒，刷新频率， 老鼠伸头的px（多少 ms）
+    var activeShuMs = 500;
+
+/*
+	ctx.fillStyle="#FF0000";		// 设置颜色为红色
+	ctx.fillRect(0,0,150,75); 	// 绘制矩形
+    ctx.beginPath();
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    ctx.arc(50, 50, 40, -Math.PI, 0, false);
+    ctx.ellipse(50, 50, 50,30, 0, -Math.PI, 0, false); // 椭圆
+*/
+    function drawHoleBottom(x,y){
+        ctx.fillStyle = bgColor;
+        ctx.strokeStyle = lineColor;
+        ctx.beginPath();
+        ctx.moveTo(x-holeWidth/2, y+holeHeight/2 +shuHeight);
+        ctx.lineTo(x-holeWidth/2, y+holeHeight/2);
+        ctx.ellipse(x,y, holeWidth/2,holeHeight/2, 0, -Math.PI, 0, true);
+        ctx.lineTo(x+holeWidth/2, y+holeHeight/2 +shuHeight);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(x,y, holeWidth/2,holeHeight/2, 0, -Math.PI, 0, true);
+        ctx.stroke();
+        ctx.closePath();
+    }
+    function drawHoleTop(x,y){
+        ctx.strokeStyle = lineColor;
+        ctx.beginPath();
+        ctx.ellipse(x,y, holeWidth/2,holeHeight/2, 0, -Math.PI, 0, false);
+        ctx.stroke();
+        ctx.closePath();
+    }
+    function drawShu(x,y,p){ // 上移比例 0-1 间的小鼠
+        ctx.fillStyle = shuColor;
+        ctx.strokeStyle = lineColor;
+        ctx.beginPath();
+        ctx.fillRect(x-shuWidth/2,y+holeHeight/2-p,shuWidth,shuHeight); 	// 绘制矩形
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+    }
+    // drawHole(100,100,0.3)
+    var holes = [
+        { x:200, y:80,  p:0, s:0, },
+        { x:400, y:80,  p:0, s:0, },
+        { x:150, y:200, p:0, s:0, },
+        { x:300, y:200, p:0, s:0, },
+        { x:450, y:200, p:0, s:0, },
+        { x:200, y:320, p:0, s:0, },
+        { x:400, y:320, p:0, s:0, },
+    ];
+    function drawHole(x,y,p){
+        drawHoleTop(x,y);
+        drawShu(x,y,p);
+        drawHoleBottom(x,y);
+    }
+    function drawMouse(){
+        ctx.beginPath();
+        ctx.moveTo(mouseX,mouseY+10);
+        ctx.lineTo(mouseX,mouseY);
+        ctx.lineTo(mouseX+8,mouseY+8);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    function drawAll(){
+        ctx.fillStyle = bgColor;
+	    ctx.fillRect(0,0,9999,9999); 	// 绘制矩形
+        // console.log("重绘");
+        holes.forEach(function(v){
+            drawHole(v.x,v.y,v.p);
+        }); 
+        drawMouse();
+        setTimeout(drawAll, fpsMs);
+    }
+    setTimeout(drawAll, fpsMs);
+    function flushHole(hole){
+        hole.p+=hole.s;
+        if(hole.p>shuMove){
+            hole.s = -shuStep;
+        } else if(hole.p<0){
+            hole.p = 0;
+            hole.s = 0;
+        }
+    }
+    function flushAll(){
+        // console.log("刷新");
+        holes.forEach(function(v){
+            flushHole(v);
+        }); 
+        setTimeout(flushAll, flushMs);
+    }
+    setTimeout(flushAll, flushMs);
+    
+    function activeShu(){
+        var x = Math.floor((Math.random()*(holes.length)));
+        if(holes[x].p){
+            activeShu();
+        } else {
+            holes[x].s = shuStep;
+            setTimeout(activeShu, activeShuMs);
+        }
+    }
+    setTimeout(activeShu, 0);
+
+    myCanvas.onclick = function(e){
+        // console.log(mouseX,mouseY);
+        mouseX = e.offsetX;
+        mouseY = e.offsetY;
+        if(holes.some(function(v){return v.p&&(Math.abs(mouseX-v.x)<holeWidth/2)&&(Math.abs(mouseY-v.y)<holeHeight<2)})) {
+            document.getElementById("score").innerText = ++score;
+        }
+    }
+    myCanvas.onmousemove = function(e){
+        // console.log(mouseX,mouseY);
+        mouseX = e.offsetX;
+        mouseY = e.offsetY;
+    }
+    
+    
+
+</script>
+</body>
+</html>
